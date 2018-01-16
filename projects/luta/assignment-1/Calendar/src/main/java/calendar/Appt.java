@@ -110,9 +110,9 @@ public class Appt implements  Comparable<Appt>{
      * @sets valid to true if the appointment is valid
      */
     private void isValid() {
-    	int NumDaysInMonth= CalendarUtil.NumDaysInMonth(startYear,startMonth-1);
-    				
-    	if(startHour<0 || startHour>23)
+    	int NumDaysInMonth= CalendarUtil.NumDaysInMonth(startYear,startMonth); // BUG
+
+        if(startHour<=0 || startHour>=23) // BUG
     		this.valid=false;
     	else
         	if(startMinute<0 || startMinute>59)
@@ -161,7 +161,7 @@ public class Appt implements  Comparable<Appt>{
 
     /** Sets title */
     public void setTitle(String title) {
-        if (title == null) 
+        if (title == "") // BUG
             this.title = "";
         else
             this.title = title;

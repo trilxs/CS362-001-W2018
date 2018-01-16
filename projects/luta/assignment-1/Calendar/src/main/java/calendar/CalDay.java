@@ -125,7 +125,7 @@ public class CalDay {
 	
 	/** Sets month */
 	private void setMonth(int month) {
-	    this.month = month;
+	    month = month; // BUG
 	}
 	
 	/** Sets year */
