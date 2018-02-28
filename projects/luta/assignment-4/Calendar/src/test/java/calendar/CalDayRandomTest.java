@@ -79,6 +79,23 @@ public class CalDayRandomTest {private static final long TestTimeout = 60 * 500 
 				          startYear ,
 				          title,
 				         description);
+
+                         
+				 int startHour2=ValuesGenerator.getRandomIntBetween(random, -20, 80);
+				 int startMinute2=ValuesGenerator.getRandomIntBetween(random, -20, 80);
+				 int startDay2=ValuesGenerator.getRandomIntBetween(random, -20, 60);
+				 int startMonth2=ValuesGenerator.getRandomIntBetween(random, 1, 12);
+				 int startYear2=ValuesGenerator.RandInt(random);
+				 String title2="Birthday Party";
+				 String description2="This is my birthday party.";
+				// System.out.println("Random day is " + startDay2);
+				 Appt appt2 = new Appt(startHour2,
+				          startMinute2 ,
+				          startDay2 ,
+				          startMonth2 ,
+				          startYear2 ,
+				          title2,
+				         description2);
 			 if(!appt.getValid())continue;
 
             
@@ -92,6 +109,7 @@ public class CalDayRandomTest {private static final long TestTimeout = 60 * 500 
 			CalDay calday = new CalDay(gregCal);
             assertTrue(calday.isValid());
             calday.addAppt(appt);
+            calday.addAppt(appt2);
 
 				 elapsed = (Calendar.getInstance().getTimeInMillis() - startTime);
 			        if((iteration%10000)==0 && iteration!=0 )
