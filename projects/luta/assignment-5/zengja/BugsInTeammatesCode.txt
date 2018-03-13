@@ -1,0 +1,7 @@
+Bug #1: if(startHour<0 || startHour>23) this.valid=true;
+The this.valid statement should be set to false, since if startHour is less than 0 or greater than 23, then it’s out of bound. 
+
+Bug #2: for (int i = 1; i < appts.size(); i++) {
+The 1 should be changed to zero because the index in an array starts at 0, otherwise it’ll miss an element.
+
+These bugs were issues that are very occasionally received, so no, they are not very interesting. However, it is good to be careful with these sorts of bugs as they are also easy to miss.
