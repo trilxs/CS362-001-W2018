@@ -57,7 +57,7 @@ public class UrlValidatorTest extends TestCase {
     assertFalse(urlVal.isValid("http://aaa"));
     assertFalse(urlVal.isValid("http://google.com:-1"));
     assertFalse(urlVal.isValid("http://google.com:80/.."));
-    assertFalse(urlVal.isValid("http://google.com:80/test1//#/file")); 
+    assertFalse(urlVal.isValid("http://google.com:80/test1//#/file")); //odd
     //one missing for each part of the url
     assertFalse(urlVal.isValid("http://:80"));
     assertTrue(urlVal.isValid("http://google.com/test1"));
